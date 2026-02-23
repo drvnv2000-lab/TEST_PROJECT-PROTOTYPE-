@@ -1,16 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmileCare AI Dental Platform</title>
+  <style>
+    :root{--primary:#2563EB;--success:#10B981;--warning:#F59E0B;--error:#EF4444;--bg:#F9FAFB;--card:#fff;--text:#111827;--muted:#6B7280}
+    *{box-sizing:border-box;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+    body{margin:0;background:var(--bg);color:var(--text)}
+    .top{position:sticky;top:0;background:#fff;border-bottom:1px solid #e5e7eb;display:flex;justify-content:space-between;align-items:center;padding:12px 16px;z-index:4}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .tooth{width:34px;height:34px;background:linear-gradient(135deg,#93c5fd,#2563EB);border-radius:50%;display:grid;place-items:center;color:#fff;font-size:18px}
+    .pill{background:#dbeafe;color:#1d4ed8;padding:6px 10px;border-radius:999px;font-size:12px}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;padding:12px 16px}
+    .tab{border:1px solid #bfdbfe;background:#eff6ff;padding:8px 12px;border-radius:8px;cursor:pointer}
+    .tab.active{background:#2563EB;color:#fff}
+    .view{display:none;padding:16px;max-width:1200px;margin:auto}
+    .view.active{display:block}
+    .grid{display:grid;gap:12px}
+    .g2{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .g3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 1px 3px rgba(0,0,0,.1)}
+    h1{font-size:28px;margin:4px 0 8px}
+    h2{font-size:22px;margin:6px 0 12px}
+    h3{font-size:18px;margin:6px 0}
+    .small{font-size:14px;color:var(--muted)}
+    .kpi{font-size:30px;font-weight:700}
+    .badge{font-size:12px;padding:4px 8px;border-radius:999px;background:#e5e7eb}
+    .ok{background:#d1fae5;color:#065f46}.warn{background:#fef3c7;color:#92400e}.danger{background:#fee2e2;color:#991b1b}
+    .timeline .slot{border-left:4px solid var(--primary);margin:10px 0;padding:10px 12px;background:#f8fbff;border-radius:8px}
+    .money{font-weight:700;color:#047857}
+    ul{margin:8px 0 0 18px;padding:0}
+  </style>
 </head>
 <body>
-    
+  <header class="top">
+    <div class="brand"><div class="tooth">🦷</div> SmileCare AI <span class="small">Prototype · India</span></div>
+    <span class="pill">HIPAA-ready | INR ₹ | Multi-tenant</span>
+  </header>
 
-    <h1>this is a heading</h1>
-    <p>this is a paragrapgh</p>
+  <nav class="tabs">
+    <button class="tab active" data-view="home">Home</button>
+    <button class="tab" data-view="patient">Patient App</button>
+    <button class="tab" data-view="provider">Provider Dashboard</button>
+    <button class="tab" data-view="ai">AI + Workflows</button>
+    <button class="tab" data-view="security">Security & Deploy</button>
+  </nav>
 
+  <section class="view active" id="home">
+    <h1>SmileCare AI Dental Platform</h1>
+    <p class="small">Comprehensive prototype platform for Indian dental practices with AI-powered operations, secure records, claims, messaging, and analytics.</p>
+    <div class="grid g3">
+      <article class="card"><h3>Patients</h3><p>Mobile-first onboarding, booking, chat, records viewer, treatment plans, and profile security controls.</p></article>
+      <article class="card"><h3>Providers</h3><p>Operational dashboard, timeline management, patient chart, treatment builder, diagnostics viewer.</p></article>
+      <article class="card"><h3>Admin</h3><p>Revenue analytics, marketing campaigns, compliance logs, scheduled jobs, integration management.</p></article>
+    </div>
+    <div class="grid g2" style="margin-top:12px">
+      <article class="card"><h3>Sample Practice</h3><p>Sitara Dental Care, Bengaluru</p><p>Lead Dentist: <b>Dr. Aarav Sharma, MDS</b></p><p>Today Revenue: <span class="money">₹1,84,500</span></p></article>
+      <article class="card"><h3>Upcoming High-Risk No-shows</h3><p><span class="badge warn">3 patients above 65%</span></p><ul><li>Priya Nair - 78%</li><li>Rohan Kapoor - 69%</li><li>Anika Iyer - 67%</li></ul></article>
+    </div>
+  </section>
 
+  <section class="view" id="patient">
+    <h2>Patient Mobile Screens (Prototype)</h2>
+    <div class="grid g3">
+      <article class="card"><h3>1) Registration</h3><p>Multi-step onboarding with age verification (18+), HIPAA notice, password strength meter, email verification.</p></article>
+      <article class="card"><h3>2) Login + 2FA</h3><p>Remember me, biometric option, SMS OTP, lockout after 5 failed attempts/15 min window.</p></article>
+      <article class="card"><h3>3) Home Dashboard</h3><p>Greeting, upcoming appointment, quick actions, oral health score ring, recent activity feed.</p></article>
+      <article class="card"><h3>4) Appointment Booking</h3><p>4-step wizard with provider selection and AI recommended slots, race-safe confirmation.</p></article>
+      <article class="card"><h3>5) Appointments</h3><p>Upcoming and Past tabs with actions (reschedule/cancel/directions).</p></article>
+      <article class="card"><h3>6) Messages</h3><p>Secure chat with end-to-end encryption indicator, attachments, read receipts.</p></article>
+      <article class="card"><h3>7) Medical Records</h3><p>X-rays/photos/documents tabs, AI finding badges, secure download links.</p></article>
+      <article class="card"><h3>8) Treatment Plans</h3><p>Overview, procedures, financial tab with INR estimates and acceptance flow.</p></article>
+      <article class="card"><h3>9) Profile</h3><p>Insurance updates, medical history, contact prefs, active sessions, logout-all devices.</p></article>
+    </div>
+  </section>
+
+  <section class="view" id="provider">
+    <h2>Provider Web Dashboard</h2>
+    <div class="grid g2">
+      <article class="card"><h3>Daily KPIs</h3><div class="grid g2"><div><div class="small">Scheduled Patients</div><div class="kpi">18</div></div><div><div class="small">Utilization</div><div class="kpi">86%</div></div><div><div class="small">High-Risk No-Shows</div><div class="kpi" style="color:#b45309">3</div></div><div><div class="small">Production Target</div><div class="kpi money">₹2,40,000</div></div></div></article>
+      <article class="card"><h3>Next Patient</h3><p><b>Meera Reddy</b> · In 15 minutes</p><p class="badge danger">Allergy: Penicillin</p><p>Chief complaint: Upper molar sensitivity.</p></article>
+    </div>
+    <article class="card timeline" style="margin-top:12px">
+      <h3>Schedule Timeline (Dr. Aarav Sharma)</h3>
+      <div class="slot"><b>10:00 AM - 11:00 AM</b> · Kavya Menon · Cleaning <span class="badge ok">Confirmed</span></div>
+      <div class="slot"><b>11:30 AM - 12:00 PM</b> · Rohan Kapoor · Emergency <span class="badge warn">⚠ 69% no-show</span></div>
+      <div class="slot" style="border-left-color:#9ca3af;background:#f3f4f6"><b>12:00 PM - 1:00 PM</b> · Lunch Break</div>
+      <div class="slot"><b>2:30 PM - 3:30 PM</b> · Priya Nair · Procedure <span class="badge warn">⚠ 78% no-show</span></div>
+    </article>
+  </section>
+
+  <section class="view" id="ai">
+    <h2>AI Models & Workflows</h2>
+    <div class="grid g2">
+      <article class="card"><h3>NoShowPredictor (XGBoost)</h3><ul><li>ROC-AUC target > 0.80</li><li>Predicts risk 0-100 with actions</li><li>Daily 6:00 AM scoring for next 7 days</li></ul></article>
+      <article class="card"><h3>TreatmentAcceptancePredictor</h3><ul><li>Uses plan cost, tier, relationship history, presentation method</li><li>Optimizes acceptance strategy</li></ul></article>
+      <article class="card"><h3>XRayAnalysisAI</h3><ul><li>Pearl/Overjet integration on upload</li><li>Detects caries, bone loss, lesions, calculus</li><li>Stores findings in record JSON</li></ul></article>
+      <article class="card"><h3>Denial + Lead Models</h3><ul><li>Claim denial risk pre-check before EDI 837</li><li>Lead score prioritization for new inquiries</li></ul></article>
+    </div>
+    <article class="card" style="margin-top:12px">
+      <h3>Automations (10 workflows)</h3>
+      <p>Reminders, insurance verification, claims auto-submission, daily analytics, reactivation, review requests, waitlist filling, monthly retraining, expired benefits outreach, and hourly confirmations.</p>
+    </article>
+  </section>
+
+  <section class="view" id="security">
+    <h2>Security, Compliance & Deployment</h2>
+    <div class="grid g3">
+      <article class="card"><h3>Auth Controls</h3><ul><li>JWT 15 min + refresh 7 days</li><li>Max 3 concurrent sessions</li><li>MFA for provider/admin</li><li>5 failed attempts → 30 min lockout</li></ul></article>
+      <article class="card"><h3>Compliance</h3><ul><li>Full audit logs retained 7 years</li><li>Encryption at rest (AES-256) + TLS 1.3</li><li>PHI RLS and field-level masking</li></ul></article>
+      <article class="card"><h3>Deployment</h3><ul><li>Dev / Staging / Production</li><li>Backups daily at 2 AM + hourly incrementals</li><li>US-East configurable region</li><li>Sentry + DataDog monitoring</li></ul></article>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.tab').forEach(btn=>btn.addEventListener('click',()=>{
+      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+      document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.view).classList.add('active');
+    }));
+  </script>
 </body>
 </html>
